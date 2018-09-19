@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Tooltips Test</title>
+
+        <!-- XIVDB Tooltips Scripts -->
+        <link href="/css/app.css" rel="stylesheet">
+        <script src="/js/app.js"></script>
+    </head>
+    <body>
+
+        <a href="http://google.com/">Google</a><br>
+        <br>
+
+        <a href="http://xivdb.com/Item/1675">XIVDB Curtana</a><br>
+        <a href="http://xivdb.com/Item/1675">Some other text</a><br>
+        <a href="http://xivdb.com/Item/1587">Some Item</a><br>
+        <a href="http://fr.xivdb.com/Item/1587">French</a><br>
+        <a href="http://xivdb.com/Achievement/4">Achievement 4</a><br>
+        <a href="http://xivdb.com/Achievement/6">Achievement 6</a>
+
+        <hr>
+
+        <button id="test" onclick="addMoar()">Add more tooltips</button>
+        <div id="addmore"></div>
+
+        <script>
+        function addMoar()
+        {
+            let link = document.createElement('a');
+            link.href = "http://xivdb.com/Item/1675";
+            link.innerHTML = 'I am a new link';
+            document.getElementById('addmore').appendChild(link);
+
+            link = document.createElement('a');
+            link.href = "http://xivdb.com/Item/1587";
+            link.innerHTML = 'Hello World';
+            document.getElementById('addmore').appendChild(link);
+
+            // refresh tooltips
+            XIVAPI.refreshTooltips();
+        }
+        </script>
+
+    </body>
+</html>
